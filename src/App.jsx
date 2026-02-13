@@ -17,39 +17,30 @@ const App = () => {
       duration: 1000, // Animation duration
       once: true, // Whether animation should happen only once
       offset: 100, // Offset from original trigger point
-      easing: 'ease-in-out', // Easing function
+      easing: "ease-in-out", // Easing function
     });
   }, []); // Empty dependency array means this runs once when component mounts
 
   return (
     <>
       <Container>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <Header />
-        <Hero />
-        <Education />
-        <Skills />
-        <Skillsmob sx={{display:{xs:"block", md:"hidden"}}} />
-        <Project />
-        <Contact />
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="education">
+          <Education />
+        </section>
+        <section id="skills">
+          <Skills />
+          <Skillsmob sx={{ display: { xs: "block", md: "hidden" } }} />
+        </section>
+        <section id="project">
+          <Project />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </Container>
     </>
   );

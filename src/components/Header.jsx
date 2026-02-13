@@ -19,8 +19,8 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
-    { label: "Skills", href: "#skills" },
     { label: "Education", href: "#education" },
+    { label: "Skills", href: "#skills" },
     { label: "Project", href: "#project" },
     { label: "Contact", href: "#contact" },
   ];
