@@ -54,11 +54,12 @@ const Hero = () => {
                   fontSize: "13px",
                 }}
               >
-                I’m a Frontend Developer focused on building modern, responsive,
-                and user-friendly web applications. Skilled in React and
-                Material UI, I create clean, scalable interfaces that balance
-                performance, usability, and design while continuously improving
-                my skills.
+                I’m a Frontend Developer passionate about building modern,
+                responsive, and user-friendly web applications. I specialize in
+                creating clean, scalable interfaces using React and Material UI,
+                focusing on performance, usability, and design consistency. As a
+                fresher, I’m continuously learning and eager to contribute to
+                real-world products.
               </Typography>
             </Box>
           </div>
@@ -159,20 +160,18 @@ const Hero = () => {
           </div>
         </Box>
         <div data-aos="fade-left">
-
-        
-        <Box
-          component="img"
-          src={profileImage}
-          alt="Profile"
-          sx={{
-            mt: { xs: 2, md: 0 },
-            width: "100%",
-            height: "auto",
-            maxWidth: 400,
-            borderRadius: "200px 40px",
-          }}
-        ></Box>
+          <Box
+            component="img"
+            src={profileImage}
+            alt="Profile"
+            sx={{
+              mt: { xs: 2, md: 0 },
+              width: "100%",
+              height: "auto",
+              maxWidth: 400,
+              borderRadius: "200px 40px",
+            }}
+          ></Box>
         </div>
       </Box>
     </>
