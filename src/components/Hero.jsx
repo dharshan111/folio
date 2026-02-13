@@ -14,11 +14,10 @@ const Hero = () => {
         sx={{
           py: 2,
           px: { xs: 2, md: 0 },
-          display:"flex",
-          justifyContent:"space-between",
-          flexDirection:{xs:"column", md:"row"},
-          alignItems:"center",
-
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
         }}
       >
         <Box>
@@ -41,7 +40,7 @@ const Hero = () => {
                 fontFamily: "poppins",
               }}
             >
-              Dharshan <span style={{color:"lightblue",}}>Developer</span> 
+              Dharshan <span style={{ color: "lightblue" }}>Developer</span>
             </Typography>
           </Box>
 
@@ -61,6 +60,10 @@ const Hero = () => {
           </Box>
           <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
             <Button
+              component="a"
+              href="https://github.com/dharshan111/"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 minWidth: "auto",
                 width: 40,
@@ -80,6 +83,10 @@ const Hero = () => {
             </Button>
 
             <Button
+              component="a"
+              href="https://www.linkedin.com/in/dharshan-r-419391287"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 minWidth: "auto",
                 width: 40,
@@ -99,6 +106,10 @@ const Hero = () => {
             </Button>
 
             <Button
+              component="a"
+              href="https://wa.me/919500732677"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 minWidth: "auto",
                 width: 40,
@@ -118,25 +129,10 @@ const Hero = () => {
             </Button>
 
             <Button
-              sx={{
-                minWidth: "auto",
-                width: 40,
-                height: 40,
-                borderRadius: "20px",
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                color: "#fff",
-                p: 0,
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.2)",
-                  transform: "scale(1.1)",
-                },
-                transition: "all 0.3s ease",
-              }}
-            >
-              <EmailIcon fontSize="small" />
-            </Button>
-
-            <Button
+              component="a"
+              href="https://instagram.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 minWidth: "auto",
                 width: 40,
@@ -161,11 +157,11 @@ const Hero = () => {
           src={profileImage}
           alt="Profile"
           sx={{
-            mt:{xs:2, md:0},
+            mt: { xs: 2, md: 0 },
             width: "100%",
             height: "auto",
             maxWidth: 400,
-            borderRadius:"200px 40px",
+            borderRadius: "200px 40px",
           }}
         ></Box>
       </Box>

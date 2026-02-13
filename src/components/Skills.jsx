@@ -22,8 +22,8 @@ const Skills = () => {
   ];
 
   return (
-    <Box sx={{ py: 8, px: 3 }}>
-                <Box sx={{ mb: 4 }}>
+    <Box sx={{ py: 8, px: 3, display:{xs:"none", md:"block"} }}>
+                <Box sx={{ mb: 4,}}>
                   <Typography 
                     sx={{ 
                       fontSize: { xs: "32px", md: "40px" }, 
@@ -47,8 +47,7 @@ const Skills = () => {
                     Technical Skills
                   </Typography>
                 </Box>
-
-      <Grid container spacing={3} sx={{ mx: "auto" }}>
+      <Grid container spacing={3} sx={{ mx: "auto",}}>
         {skills.map((skill, index) => (
           <Grid item xs={12} sm={6} key={index}>
             <Paper
@@ -58,7 +57,7 @@ const Skills = () => {
                 bgcolor: "rgba(255,255,255,0.05)",
                 borderRadius: "16px",
                 border: "1px solid rgba(255,255,255,0.1)",
-                transition: "0.3s",
+                transition: "0.3s",                
                 "&:hover": {
                   borderColor: skill.color,
                   transform: "scale(1.02)",
@@ -72,6 +71,7 @@ const Skills = () => {
                   justifyContent: "space-between",
                   gap: 1,
                   mb: 1,
+                 
                 }}
               >
                 <Typography
@@ -93,11 +93,11 @@ const Skills = () => {
 
               <Box
                 sx={{
-                  width: "100%",
                   height: "8px",
                   bgcolor: "rgba(255,255,255,0.1)",
                   borderRadius: "10px",
                   overflow: "hidden",
+                  
                 }}
               >
                 <Box

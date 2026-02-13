@@ -165,7 +165,7 @@ const Contact = () => {
                   "& .MuiOutlinedInput-root": {
                     color: "#fff",
                     "& fieldset": {
-                      borderColor: "#fff",
+                      borderColor: "rgb(177, 176, 176)",
                       borderRadius:"20px",
                     },
                     "&:hover fieldset": {
@@ -194,7 +194,7 @@ const Contact = () => {
                   "& .MuiOutlinedInput-root": {
                     color: "#fff",
                     "& fieldset": {
-                      borderColor: "#fff",
+                      borderColor: "rgb(177, 176, 176)",
                       borderRadius:"20px",
                     },
                     "&:hover fieldset": {
@@ -224,7 +224,7 @@ const Contact = () => {
                   "& .MuiOutlinedInput-root": {
                     color: "#fff",
                     "& fieldset": {
-                      borderColor: "#fff",
+                      borderColor: "rgb(177, 176, 176)",
                       borderRadius:"20px",
                     },
                     "&:hover fieldset": {
