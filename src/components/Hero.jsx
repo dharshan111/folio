@@ -136,7 +136,7 @@ const Hero = () => {
 
               <Button
                 component="a"
-                href="https://instagram.com/yourusername"
+                href="https://instagram.com/_.dhxrshxn._420"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
