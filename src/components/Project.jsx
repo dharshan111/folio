@@ -10,34 +10,29 @@ const data = [
   {
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6VHaxYWSykfeRKUBfnoFAdVAswAsN5AnIHA&s",
     title: "Built responsive landing pages with modern UI and React.",
-    channel: "Links",
-    views: "40M views",
-    createdAt: "2 days ago",
+    url: "https://dharshan111.github.io/nexttask/", // Project 1
   },
   {
     src: "https://t4.ftcdn.net/jpg/05/82/71/17/360_F_582711786_QIZaSfrv2nKTzej348R8HxbX3GB2vJjl.jpg",
     title: "Created interactive dashboards using React and MUI for clear data.",
-    channel: "Links",
-    views: "40M views",
+    url: "https://dashboardfn.vercel.app/", // Project 2
   },
   {
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP6StfMEJGAFG3NcPiirrwbEVuwTyMwrQjIA&s",
     title:
       "Developed a weather app that shows real-time forecasts using API-based data.",
-    channel: "Links",
-    views: "130M views",
+    url: "#", // No URL for now
   },
   {
-    src: "https://i0.wp.com/htmlcodex.com/wp-content/uploads/2021/10/hotel-html-template.jpg?fit=740%2C463&ssl=1",
-    title: "Designed a hotel management system to handle customer data.",
-    channel: "Links",
-    views: "130M views",
+    src: "https://screenshots.codesandbox.io/mocenb/1.png",
+    title: "Developed a movie searching app to explore flims, view IMDb rating, read reviews ",
+    url: "https://tourmaline-cendol-770f60.netlify.app", // Project 4
   },
   {
     src: "https://www.webbikeworld.com/wp-content/uploads/2019/09/livemap-helmet.jpg",
     title:
       "Developed an IoT smart helmet with safety features like accident detection.",
-    channel: "2025",
+    url: "#", // No URL for now
   },
 ];
 
@@ -47,6 +42,12 @@ export default function YouTube() {
   const scroll = (scrollOffset) => {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft += scrollOffset;
+    }
+  };
+
+  const handleProjectClick = (url) => {
+    if (url && url !== "#") {
+      window.open(url, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -121,7 +122,6 @@ export default function YouTube() {
         </div>
 
         {/* Scrollable Container */}
-
         <Box
           ref={scrollRef}
           sx={{
@@ -161,20 +161,22 @@ export default function YouTube() {
         >
           {data.map((item, index) => (
             <div
+              key={index}
               data-aos="flip-left"
               data-aos-easing="ease-out-cubic"
               data-aos-duration="2000"
             >
               <Box
-                key={index}
+                onClick={() => handleProjectClick(item.url)}
                 sx={{
                   minWidth: 310,
                   maxWidth: 310,
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  cursor: item.url && item.url !== "#" ? "pointer" : "default",
                   "&:hover": {
-                    transform: "translateY(-4px)",
+                    transform: item.url && item.url !== "#" ? "translateY(-4px)" : "none",
                     "& img": {
-                      boxShadow: "0 10px 30px rgba(74,144,226,0.3)",
+                      boxShadow: item.url && item.url !== "#" ? "0 10px 30px rgba(74,144,226,0.3)" : "0 4px 12px rgba(0,0,0,0.2)",
                     },
                   },
                 }}
@@ -236,31 +238,33 @@ export default function YouTube() {
                     }}
                   >
                     {item.channel}
-                    <span
-                      style={{ color: "rgba(255,255,255,0.7)", marginLeft: 4 }}
+                    {item.views && (
+                      <span
+                        style={{ color: "rgba(255,255,255,0.7)", marginLeft: 4 }}
+                      >
+                        • {item.views}
+                      </span>
+                    )}
+                  </Typography>
+                  {item.createdAt && (
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: "text.secondary",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 0.5,
+                        mt: 0.5,
+                      }}
                     >
-                      • {item.views}
-                    </span>
-                  </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      color: "text.secondary",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 0.5,
-                      mt: 0.5,
-                    }}
-                  >
-                    {item.createdAt}
-                  </Typography>
+                      {item.createdAt}
+                    </Typography>
+                  )}
                 </Box>
               </Box>
             </div>
           ))}
         </Box>
-
-        {/* Scroll Progress Indicator */}
       </Box>
     </>
   );

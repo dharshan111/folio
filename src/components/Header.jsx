@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import resumeFile from '../assets/Dharshan_CV.pdf';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -119,7 +120,7 @@ const Header = () => {
       <Box sx={{ px: 3, py: 2 }}>
         <Button
           variant="contained"
-          href="/path-to-your-resume.pdf"
+          href={resumeFile}
           target="_blank"
           fullWidth
           onClick={() => setMobileOpen(false)}
@@ -222,14 +223,14 @@ const Header = () => {
             ))}
             <Button
               variant="contained"
-              href="/path-to-your-resume.pdf"
+              href={resumeFile}
               target="_blank"
               sx={{
                 bgcolor: "#4a90e2",
                 color: "#fff",
                 px: { md: 2, lg: 3 },
                 py: { md: 0.8, lg: 1 },
-                borderRadius: "8px",
+                borderRadius: "20px",
                 fontWeight: 500,
                 fontSize: { md: "0.9rem", lg: "0.95rem" },
                 textTransform: "none",

@@ -159,7 +159,7 @@ const Hero = () => {
             </Box>
           </div>
         </Box>
-        <div data-aos="fade-left">
+        <div data-aos="fade-in">
           <Box
             component="img"
             src={profileImage}
