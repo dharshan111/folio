@@ -21,7 +21,7 @@ const data = [
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP6StfMEJGAFG3NcPiirrwbEVuwTyMwrQjIA&s",
     title:
       "Developed a weather app that shows real-time forecasts using API-based data.",
-    url: "#", // No URL for now
+    url: "https://kishore-sky.github.io/weather-pulse/", // No URL for now
   },
   {
     src: "https://screenshots.codesandbox.io/mocenb/1.png",
