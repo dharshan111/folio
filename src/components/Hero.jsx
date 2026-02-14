@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Button, Typography, Container } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Button, Typography, Container, Backdrop, CircularProgress } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -8,8 +8,55 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import profileImage from "../assets/Image.jpeg"; // Adjust path based on your file structure
 
 const Hero = () => {
+  const [loading, setLoading] = useState(false);
+  const [redirectUrl, setRedirectUrl] = useState("");
+
+  const handleSocialClick = (url) => {
+    setRedirectUrl(url);
+    setLoading(true);
+    
+    // Show preloader for 1.5 seconds before redirecting
+    setTimeout(() => {
+      setLoading(false);
+      window.open(url, "_blank", "noopener,noreferrer");
+      setRedirectUrl("");
+    }, 1500);
+  };
+
   return (
     <>
+      {/* Backdrop Loader */}
+      <Backdrop
+        sx={{
+          color: "#fff",
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+          flexDirection: "column",
+          gap: 2,
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          backdropFilter: "blur(5px)",
+        }}
+        open={loading}
+      >
+        <CircularProgress color="inherit" size={60} thickness={4} />
+        <Typography
+          variant="h6"
+          sx={{
+            fontFamily: "poppins",
+            animation: "pulse 1.5s ease-in-out infinite",
+            "@keyframes pulse": {
+              "0%": { opacity: 0.6 },
+              "50%": { opacity: 1 },
+              "100%": { opacity: 0.6 },
+            },
+          }}
+        >
+          Please wait {redirectUrl.includes("github") ? "..." : 
+                        redirectUrl.includes("linkedin") ? "..." : 
+                        redirectUrl.includes("wa.me") ? "..." : 
+                        redirectUrl.includes("instagram") ? "..." : "..."}
+        </Typography>
+      </Backdrop>
+
       <Box
         sx={{
           py: 2,
@@ -66,10 +113,7 @@ const Hero = () => {
           <div data-aos="fade-up">
             <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
               <Button
-                component="a"
-                href="https://github.com/dharshan111/"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => handleSocialClick("https://github.com/dharshan111/")}
                 sx={{
                   minWidth: "auto",
                   width: 40,
@@ -83,16 +127,17 @@ const Hero = () => {
                     transform: "scale(1.1)",
                   },
                   transition: "all 0.3s ease",
+                  "&:disabled": {
+                    opacity: 0.5,
+                  },
                 }}
+                disabled={loading}
               >
                 <GitHubIcon fontSize="small" />
               </Button>
 
               <Button
-                component="a"
-                href="https://www.linkedin.com/in/dharshan-r-419391287"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => handleSocialClick("https://www.linkedin.com/in/dharshan-r-419391287")}
                 sx={{
                   minWidth: "auto",
                   width: 40,
@@ -106,16 +151,17 @@ const Hero = () => {
                     transform: "scale(1.1)",
                   },
                   transition: "all 0.3s ease",
+                  "&:disabled": {
+                    opacity: 0.5,
+                  },
                 }}
+                disabled={loading}
               >
                 <LinkedInIcon fontSize="small" />
               </Button>
 
               <Button
-                component="a"
-                href="https://wa.me/919500732677"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => handleSocialClick("https://wa.me/919500732677")}
                 sx={{
                   minWidth: "auto",
                   width: 40,
@@ -129,16 +175,17 @@ const Hero = () => {
                     transform: "scale(1.1)",
                   },
                   transition: "all 0.3s ease",
+                  "&:disabled": {
+                    opacity: 0.5,
+                  },
                 }}
+                disabled={loading}
               >
                 <WhatsAppIcon fontSize="small" />
               </Button>
 
               <Button
-                component="a"
-                href="https://instagram.com/_.dhxrshxn._420"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => handleSocialClick("https://instagram.com/_.dhxrshxn._420")}
                 sx={{
                   minWidth: "auto",
                   width: 40,
@@ -152,7 +199,11 @@ const Hero = () => {
                     transform: "scale(1.1)",
                   },
                   transition: "all 0.3s ease",
+                  "&:disabled": {
+                    opacity: 0.5,
+                  },
                 }}
+                disabled={loading}
               >
                 <InstagramIcon fontSize="small" />
               </Button>
@@ -171,7 +222,7 @@ const Hero = () => {
               maxWidth: 400,
               borderRadius: "200px 40px",
             }}
-          ></Box>
+          />
         </div>
       </Box>
     </>
