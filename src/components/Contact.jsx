@@ -157,8 +157,9 @@ const Contact = () => {
                   fontFamily: "poppins",
                 }}
               >
-                Have a project in mind? I'd love to hear about it. Fill out the
-                form below and I'll get back to you within 24 hours.
+                Have a project in mind? I’d love to hear about it. I’m currently
+                open to work fill out the form below and I’ll get back to you
+                within 24 hours.
               </Typography>
 
               <Box component="form" onSubmit={handleSubmit}>
